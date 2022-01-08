@@ -20,17 +20,23 @@
     text-decoration: none
     
 }
+img{
+    transition-duration: 2s;
+}
+img:hover{
+    opacity: 0.8;
+   
+    width: 26px;
+}
 
 /*Global======================*/
-.sideBar.hide ~ h2{
-    display: hidden;
-}
+
 
 
 
 /*<section>.sideBar=====*/
 .sideBar{
-    width: 250px;
+    width: 45px;
     background-color: var(--green);
     display: flex;
     flex-direction: column;
@@ -38,11 +44,17 @@
     padding: 20px;
     height: 93vh;
     overflow: hidden;
+    padding-right: 10px;
+    transition-duration: 2s;
+
 }
 /*<div>.sideBarHeader=====*/
 .sideBarHeader{
     display: flex;
     justify-content: space-between
+}
+.sideBarHeader img:nth-last-of-type(2){
+    display: none;
 }
 /*<div>.sideBarHeader=====*/
 
@@ -50,24 +62,36 @@
 .search{
     display: flex;
     flex-direction: column;
+    margin-left: -12px;
 }
 .search input{
     height: 50px;
-    padding-left: 60px;
+    width: 50px;
     font-size: 16px;
     background-color: var(--light-green);
     border-radius: 12px;
+    transition-duration: 2s;
+
   
 
 }
+.search input{
+    text-align: center;
+}
 .search input::placeholder{
     color: var(--text-color);
+
+}
+
+.search input:focus ~ img{
+ 
+    opacity: 0.4;
 }
 .search img{
     width: 30px;
     position: relative;
     top: -39px;
-    left: 13px
+    left: 10px
 }
 /*<div>.search========*/
 
@@ -85,9 +109,33 @@
 .anotherPages h2{
     font-weight: 400;
     font-size: 16px;
+    margin-left: 30px;
+    transition-duration: 0.5s;
+    
+  
+}
+.anotherPages h2:hover{
+    font-size: 17px;
+    opacity: 0.8;
 }
 /*<section>.sideBar=======*/
+
+/*quanto mostrar a barra lateral*/
 /*.sideBar hiden===========*/
+
+.sideBar.active{
+    width: 250px;
+}
+.sideBar.active .anotherPages h2{
+    display: block;
+}
+.sideBar.active .search input{
+    width: auto;
+    transition-duration: 2s;
+}
+.sideBar.active .sideBarHeader img:nth-last-of-type(2){
+    display: block;
+}
 
 
 
